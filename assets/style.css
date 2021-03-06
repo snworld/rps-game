@@ -1,0 +1,118 @@
+body {    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+* {
+    color: #fff;
+    background: #003;
+}
+button {
+    box-shadow: none !important;
+}
+.score {
+    color: rgb(224, 224, 224);
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.score h2 {
+    font-size: 30px;
+}
+.score p {
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+}
+.intro {
+    transition: opacity 0.5s ease;
+}
+img {
+    max-width: 200px;
+    margin: 20px;
+}
+.match {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s ease 1s !important;
+}
+.hands, 
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.player-hand {
+    transform: rotateY(180deg);
+}
+.computer-hand {
+
+}
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+div.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+}
+@keyframes shakeP {
+    0%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    16.6%{
+        transform: rotate(-10deg) rotateY(180deg) translateY(-20px);
+    }
+    33.3%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    50%{
+        transform: rotate(-10deg) rotateY(180deg) translateY(-20px);
+    }
+    66.6%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+    83.3%{
+        transform: rotate(-10deg) rotateY(180deg) translateY(-20px);
+    }
+    100%{
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+@keyframes shakeC {
+    0%{
+        transform: translateY(0px);
+    }
+    16.6%{
+        transform: rotate(10deg) translateY(-20px);
+    }
+    33.3%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: rotate(10deg) translateY(-20px);
+    }
+    66.6%{
+        transform: translateY(0px);
+    }
+    83.3%{
+        transform: rotate(10deg) translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        max-width: 130px;
+    }
+}
+
+@media (max-width: 380px) {
+    img {
+        max-width: 100px;
+    }
+}
