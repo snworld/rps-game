@@ -1,41 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 body {    
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
-}
-* {
-    color: #fff;
-    background: #003;
+    font-family: 'Open Sans', sans-serif !important;
+    background: #8787ff !important;
 }
 button {
-    box-shadow: none !important;
+    outline: none !important;
 }
+section {
+    background: #6969ff;
+    max-width: 700px;
+    margin: 25px auto;
+    border-radius: 20px;
+    /*box-shadow: 0 0 10px #5959f0;*/
+    border: 10px solid #5959f0;
+    min-height: 620px;
+}
+.button {
+    pointer-events: auto;
+    cursor: pointer;
+    background: #8787ff;
+    border: none;
+    padding: 1.5rem 3rem;
+    margin: 0;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+}
+.button::before,
+.button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.button--mimas {
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    color: #fff;
+    background: #fff;
+}
+.button--mimas span {
+    position: relative;
+    mix-blend-mode: difference;
+}
+.button--mimas::before {
+    content: '';
+    background: #3636ff;
+    width: 130%;
+    left: -15%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+.button--mimas:hover::before {
+    transform: translate3d(100%,0,0);
+}
+
+
+.button--bestia {
+    color: #fff;
+    background: none;
+    padding: 0;
+
+}
+
+.button--bestia .button__bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e7e7e7;
+    border-radius: 0.85rem;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button--bestia:hover .button__bg {
+    transform: scale3d(1.2,1.2,1);
+}
+
+.button--bestia .button__bg::before,
+.button--bestia .button__bg::after {
+    content: '';
+    position: absolute;
+    background: #3636ff;
+}
+
+.button--bestia .button__bg::before {
+    width: 110%;
+    height: 0;
+    padding-bottom: 110%;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,1);
+}
+
+.button--bestia:hover .button__bg::before {
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
+}
+
+.button--bestia .button__bg::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.button--bestia:hover .button__bg::after {
+    opacity: 1;
+    transition-duration: 0.01s;
+    transition-delay: 0.3s;
+}
+
+.button--bestia span {
+    display: block;
+    position: relative;
+    padding: 15px 25px;
+    mix-blend-mode: difference;
+}
+
 .score {
     color: rgb(224, 224, 224);
-    height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 15px;
 }
-.score h2 {
-    font-size: 30px;
+.score h5 {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;    
 }
-.score p {
-    text-align: center;
-    padding: 10px;
-    font-size: 25px;
-}
-.intro {
+.intro h2 {
     transition: opacity 0.5s ease;
 }
 img {
-    max-width: 200px;
-    margin: 20px;
+    max-width: 160px;
+    margin: 15px;
 }
 .match {
-    position: absolute;
+    /*position: absolute;
     top: 60%;
     left: 50%;
     right: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     transition: opacity 1s ease 1s !important;
 }
 .hands, 
@@ -44,19 +161,28 @@ img {
     justify-content: space-between;
     align-items: center;
 }
+.options button {
+    margin: 0 20px;
+}
 .player-hand {
     transform: rotateY(180deg);
 }
 .computer-hand {
 
 }
+.winner {
+    font-weight: 700;
+    text-transform: uppercase;
+}
 div.fadeOut {
-    opacity: 0;
-    pointer-events: none;
+    /*opacity: 0;*/
+    /*pointer-events: none;*/
+    display: none;
 }
 div.fadeIn {
-    opacity: 1;
-    pointer-events: all;
+    /*opacity: 1;*/
+    /*pointer-events: all;*/
+    display: block;
 }
 @keyframes shakeP {
     0%{

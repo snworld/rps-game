@@ -14,7 +14,7 @@ const game = () => {
     }
 
     const playMatch = () => {
-        const options = document.querySelectorAll('.options button');
+        const options = document.querySelectorAll('.options button span');
         const playerHand = document.querySelector('.player-hand');
         const compHand = document.querySelector('.computer-hand');
         const hands = document.querySelectorAll('.hands img');
